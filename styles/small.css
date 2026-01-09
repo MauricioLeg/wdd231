@@ -135,7 +135,10 @@ h2 {
     display: grid;
 }
 h3 {
-    padding: 1rem 0;
+    padding: 1rem;
+}
+h3:hover {
+    background-color: #ddd;
 }
 #all {
     justify-self: center;
