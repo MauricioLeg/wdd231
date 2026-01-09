@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mauricio Leguizamon">
+    <meta name="description" content="This is the homepage for the course WDD231. Is meant to develop Web development skills">
     <title>Document</title>
     <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script src="scripts/navigation.js" defer></script>
 </head>
@@ -13,7 +15,7 @@
     <header>
         <img src="images/home.svg" alt="Site Logo" width="512" height="512">
         <span>Mauricio's Site Title</span>
-        <button id="ham-btn" class="hamburger"></button>
+        <button id="ham-btn" class="hamburger" title="Menu bar"></button>
     </header>
     <nav id="nav-bar" class="navigation">
         <ul>
@@ -24,7 +26,35 @@
     </nav>
     <main>
         <h1>Home</h1>
+        <section class="about box">
+            <h2>About Me</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius perspiciatis est labore illo quisquam magni molestiae 
+                corrupti ex accusamus possimus in hic officia odit, veniam tempora dignissimos, eum debitis ipsam, rem distinctio quia 
+                temporibus deleniti. Exercitationem nemo veniam repudiandae quis adipisci ullam cupiditate, culpa corporis quasi molestias 
+                hic nostrum obcaecati mollitia neque laboriosam ipsa voluptatem quisquam accusantium labore aspernatur accusamus? Delectus 
+                doloremque a fugit nisi vel inventore vitae, quo doloribus tempore soluta neque commodi laborum debitis pariatur 
+                perspiciatis. Quae amet dignissimos iure rerum, quibusdam laboriosam! Minima temporibus cumque molestias soluta voluptatum 
+                quam veritatis, commodi, veniam officiis ducimus animi dolorum nisi?</p>
+        </section>
+        <section class="photo box">
+            <h2>Student Photo</h2>
+            <img src="images/profile.jpg" alt="Student Profile Picture" width="200" height="200" loading="lazy">
+        </section>
+        <section class="courses-grid">
+            
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/MauricioLeg" target="_blank"><img src="images/github.svg" alt="Link to personal GitHub page"></a>
+            <a href="https://www.linkedin.com/in/mauricio-leguizamon-2504292a5/" target="_blank"><img src="images/linkedin.svg" alt="Link to personal LinkedIn page"></a>
+            <a href="https://www.facebook.com/mauricio.leguizamon.731" target="_blank"><img src="images/facebook.svg" alt="Link to personal Facebook page"></a>
+            <a href="https://www.instagram.com/leguizamon2337/" target="_blank"><img src="images/instagram.svg" alt="Link to personal Instagram page"></a>
+        </div>
+        <div class="info">
+            <p>© <span id="currentyear"></span> ※ Mauricio Leguizamon ※ Tucuman, Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
 </body>
 </html>

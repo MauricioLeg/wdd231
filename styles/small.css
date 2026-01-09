@@ -1,0 +1,178 @@
+:root {
+    --primary-color: beige;
+    --secondary-color: #382929;
+}
+
+* {
+    font-family: "Josefin Sans", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/************************************ HEADER **********************************************/
+header {
+    display: grid;
+    grid-template-columns: 24px auto 44px;
+    padding: 5px 0 5px 10px;
+    border-bottom: solid 1px #ddd;
+    column-gap: 8px;
+    align-items: end;
+}
+
+header img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5px;
+}
+
+header span {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+/********************************** HAMBURGER NAVIGATION ***********************************/
+.hamburger {
+    background: none;
+    border: none;
+    color: #3D405B;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.hamburger::before {
+    content: "\2630";
+    font-size: 24px;
+}
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/***************************** NAVIGATION BAR *****************************/
+.navigation {
+    display: none;
+}
+.navigation.show {
+    display: block;
+    background-color: var(--primary-color);
+}
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    text-align: center;
+    border: solid 1px #ddd;
+    padding: 15px 0;
+    width: 100%;
+}
+li a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+#current {
+    background-color: rgb(204, 204, 171);
+}
+li:hover {
+    background-color: rgb(204, 204, 171);;
+}
+
+/******************************** FOOTER **************************************/
+footer {
+    background-color: var(--primary-color);
+    padding: 0;
+    position: sticky;
+    margin-top: 1rem;
+    width: 100%;
+}
+.container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-right: 5px;
+}
+.info {
+    padding: 1rem;
+    text-align: center;
+}
+
+/******************************** CONTENT *****************************/
+
+.box {
+    background-color: var(--primary-color);
+    margin: 0.5rem;
+    padding: 0;
+    border-radius: 5px;
+}
+h2 {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 5px 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+}
+.box p {
+    padding: 10px 15px;
+}
+.box img {
+    display: flex;
+    justify-self: center;
+    width: 90%;
+    height: auto;
+    padding: 1.2rem 0;
+}
+.courses-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+.courses, 
+.courses-grid h2 {
+    grid-column: 1 / 4;
+    display: grid;
+}
+h3 {
+    padding: 1rem 0;
+}
+#all {
+    justify-self: center;
+    align-self: center;
+}
+#wdd {
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+}
+#cse {
+    grid-column: 3;
+    justify-self: center;
+    align-self: center;
+}
+#cards-container {
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+}
+
+#cards-container section {
+    background-color: var(--primary-color);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    gap: 2px;
+}
+
+#cards-container section.completed {
+    background-color: lightgreen;
+}
+.credits {
+    grid-column: 1 / 4;
+    text-align: center;
+}
