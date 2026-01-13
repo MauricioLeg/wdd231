@@ -152,3 +152,5 @@ function createCoursesCards(filteredCourses) {
     credits.classList.add("credits");
     cardsContainer.appendChild(credits)
 };
+
+// Comment to check json file
