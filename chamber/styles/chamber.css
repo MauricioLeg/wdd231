@@ -77,6 +77,35 @@ li:hover {
     background-color: rgb(204, 204, 171);;
 }
 
+/**************** DIRECTORY ****************/
+.display {
+    text-align: center;
+    padding: 1rem;
+}
+.card-box {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 2rem;
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 8px 8px 8px #555;
+}
+section img {
+    display: flex;
+    justify-self: center;
+}
+
+.cards.list {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.cards.list img {
+    display: none;
+}
+
 /**************** FOOTER ****************/
 footer {
     background-color: var(--primary-color);

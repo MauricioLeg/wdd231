@@ -1,0 +1,59 @@
+[
+  {
+    "companyName": "TechNova Solutions",
+    "address": "123 Innovation Drive, Silicon City, CA 94016",
+    "phone": "+1-555-123-4567",
+    "website": "https://www.technova.com",
+    "membershipLevel": 3,
+    "logo": "https://technova.com/wp-content/uploads/2025/05/logo2-55x55.jpg"
+  },
+  {
+    "companyName": "Peak Performance Gear",
+    "address": "2026 Mountain Pass, Boulder, CO 80302",
+    "phone": "+1-555-901-2345",
+    "website": "https://www.peakperformancegear.com",
+    "membershipLevel": 2,
+    "logo": "https://cdn.logo.com/hotlink-ok/logo-social.png"
+  },
+  {
+    "companyName": "BluePeak Financial",
+    "address": "789 Summit Ave, Denver, CO 80203",
+    "phone": "+1-555-345-6789",
+    "website": "https://www.bluepeakfinancial.com",
+    "membershipLevel": 1,
+    "logo": "https://cdn.prod.website-files.com/63aa1893a5b2ab2833880a7a/63aa1893a5b2ab32d8880ad1_BPF-logo.svg"
+  },
+  {
+    "companyName": "Maple Grove Bakery",
+    "address": "88 Maple St, Minneapolis, MN 55401",
+    "phone": "+1-555-234-8765",
+    "website": "https://www.maplegrovebakery.com",
+    "membershipLevel": 3,
+    "logo": "https://cdn.logo.com/hotlink-ok/logo-bakery.png"
+  },
+  {
+    "companyName": "Urban Eats Diner",
+    "address": "654 Downtown St, Austin, TX 78701",
+    "phone": "+1-555-567-8901",
+    "website": "https://www.urbaneatsdiner.com",
+    "membershipLevel": 1,
+    "logo": ""
+
+  },
+  {
+    "companyName": "Skyline Architects",
+    "address": "987 Skyline Blvd, Seattle, WA 98101",
+    "phone": "+1-555-678-9012",
+    "website": "https://www.skylinearchitects.com",
+    "membershipLevel": 3,
+    "logo": ""
+  },
+  {
+    "companyName": "AquaPure Water Co.",
+    "address": "753 River Rd, Boise, ID 83702",
+    "phone": "+1-555-890-1234",
+    "website": "https://www.aquapurewater.com",
+    "membershipLevel": 1,
+    "logo": "https://lirp.cdn-website.com/5d07640e72664ad3b7708ab40fd7879e/dms3rep/multi/opt/080-960w.png"
+  }
+]
