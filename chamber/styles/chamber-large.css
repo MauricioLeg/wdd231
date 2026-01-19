@@ -1,15 +1,40 @@
 @media only screen and (min-width: 30rem) {
-    .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 80%;
-        justify-self: center;
+    .hamburger {
+        display: none;
     }
-    .card-box {
-        margin: 1rem;
-        padding: 2rem 1rem;    
+    header {
+        grid-template-columns: 34px 1fr 1fr;
+    }
+    header h1 {
+        font-size: larger;
+    }
+    .navigation {
+        display: block;
+        grid-column: 3 / 4;
+    }
+    .navigation ul {
+        display: flex;
+        list-style: none;
+    }
+    ul li {
+        border: none;
     }
 
+    .cards.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+    .card-box {
+        margin: .5rem;
+        padding: 2rem 1rem;
+    }
+    .cards {
+        margin: 1rem 0;
+        
+    }
     .cards.list .card-box {
         margin: 0 1rem;
         padding: .5rem;

@@ -3,58 +3,42 @@
     --secondary-color: #382929;
     --font-family: "Roboto";
 }
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+ }
+ html, body {
+    width: 100vw;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+ }
 
-/******************** HEADER **********************/
+/*************** HEADER ***************/
 header {
+    display: grid;
+    grid-template-columns: 34px auto 48px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    display: grid;
-    grid-template-columns: 34px auto 44px;
-    padding: 5px 0 5px 10px;
-    border-bottom: solid 1px #ddd;
-    column-gap: 8px;
-    align-content: center;
 }
 header img {
-    display: block;
-    width: 100%;
+    width: 34px;
     height: auto;
-    padding-bottom: 5px;
 }
-header span {
-    display: flex;
-    align-self: center;
-    font-size: large;
-    font-family: var(--font-family);
+header h1 {
+    font-size: medium;
+    margin-left: 5px;
 }
 
-.hamburger {
-    background: none;
-    border: none;
-    color: #3D405B;
-    cursor: pointer;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-.hamburger::before {
-    content: "\2630";
-    font-size: 24px;
-}
-.hamburger.show::before {
-    content: "\00D7";
-}
-
-/*********************** NAVIGATION BAR *************************/
+/*************** NAVIGATION ***************/
 .navigation {
     display: none;
 }
 .navigation.show {
     display: block;
     background-color: var(--primary-color);
+    grid-column: 1 / 4;
 }
 .navigation ul {
     list-style: none;
@@ -71,42 +55,77 @@ li a {
     color: var(--secondary-color);
 }
 #current {
-    background-color: rgb(204, 204, 171);
+    border-bottom: 1px solid #000;
 }
 li:hover {
     background-color: rgb(204, 204, 171);;
 }
-
-/**************** DIRECTORY ****************/
-.display {
-    text-align: center;
-    padding: 1rem;
+.hamburger {
+    background: none;
+    border: none;
+    color: #3D405B;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+.hamburger::before {
+    content: "\2630";
+    font-size: 24px;
+}
+.hamburger.show::before {
+    content: "\00D7";
+}
+
+/*************** DIRECTORY ***************/
+h2 {
+    text-align: center;
+}
+.display {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
 .card-box {
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    margin: 2rem;
-    padding: 2rem;
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    box-shadow: 8px 8px 8px #555;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px #333;
+    border: 1px solid var(--primary-color);
 }
-section img {
+.card-box img {
     display: flex;
     justify-self: center;
+    margin: 1rem 0;
 }
-
-.cards.list {
-    display: block;
-    width: 100%;
-    margin: 0;
-    padding: 0;
+.cards.list .card-box {
+    margin: 0 1rem;
+    padding: .5rem;
+    box-shadow: none;
 }
-.cards.list img {
+.cards.list .card-box h3 {
+    padding: .5rem;
+}
+.cards.list .card-box:nth-child(even) {
+    background-color: #fff;
+    color: #000;
+}
+.cards.list .card-box:nth-child(odd) {
+    background-color: blanchedalmond;
+    color: #000;
+}
+.cards.list .card-box img {
     display: none;
 }
+img.logo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: contain;
+}
 
-/**************** FOOTER ****************/
+/*************** FOOTER ***************/
 footer {
     background-color: var(--primary-color);
     padding: 0;

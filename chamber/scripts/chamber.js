@@ -22,7 +22,11 @@ async function createCards() {
         data.forEach(company => {
             const card = document.createElement("section");
             card.classList.add('card-box');
-            card.innerHTML = `<img src="${company.logo}" width="150" height="150" loading="lazy">
+            let imgTag = `<img src="${company.logo}" width="150" height="auto loading="lazy" alt="Site's logo">`;
+            if (company.logo === "https://cdn.logo.com/hotlink-ok/logo-social.png") {
+                imgTag = `<img src="${company.logo}" width="190" height="100" style="aspect-ratio: 1.9; object-fit: contain;" loading="lazy" alt="Site's logo">`;
+            }
+            card.innerHTML = `${imgTag}
             <h3>Company name: ${company.companyName}</h3>
             <p>Address: ${company.address}</p>
             <p>Phone number: ${company.phone}</p>
