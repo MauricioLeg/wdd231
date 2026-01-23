@@ -106,40 +106,39 @@ h2 {
     justify-content: center;
     gap: 1rem;
 }
-.directory {
-    .card-box {
-        background-color: var(--secondary-color);
-        color: var(--primary-color);
-        margin: 1rem;
-        padding: 1rem;
-        border-radius: 5px;
-        box-shadow: 8px 8px 8px #333;
-        border: 1px solid var(--primary-color);
-    }
-    .card-box img {
-        display: flex;
-        justify-self: center;
-        margin: 1rem 0;
-    }
-    .cards.list .card-box {
-        margin: 0 1rem;
-        padding: .5rem;
-        box-shadow: none;
-    }
-    .cards.list .card-box h3 {
-        padding: .5rem;
-    }
-    .cards.list .card-box:nth-child(even) {
-        background-color: #fff;
-        color: #000;
-    }
-    .cards.list .card-box:nth-child(odd) {
-        background-color: blanchedalmond;
-        color: #000;
-    }
-    .cards.list .card-box img {
-        display: none;
-    }
+
+.directory .card-box {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px #333;
+    border: 1px solid var(--primary-color);
+}
+.directory .card-box img {
+    display: flex;
+    justify-self: center;
+    margin: 1rem 0;
+}
+.directory .cards.list .card-box {
+    margin: 0 1rem;
+    padding: .5rem;
+    box-shadow: none;
+}
+.directory .cards.list .card-box h3 {
+    padding: .5rem;
+}
+.directory .cards.list .card-box:nth-child(even) {
+    background-color: #fff;
+    color: #000;
+}
+.directory .cards.list .card-box:nth-child(odd) {
+    background-color: blanchedalmond;
+    color: #000;
+}
+.directory .cards.list .card-box img {
+    display: none;
 }
 img.logo {
     width: 100%;
