@@ -147,11 +147,3 @@ function displayForecast(data) {
                             <p>${tomorrow}: ${data.list[10].main.temp}&deg;C</p>
                             <p>${afterTomorrow}: ${data.list[18].main.temp}&deg;C</p>`;
 }
-
-const currentPage = window.location.pathname;
-const navLinks = document.querySelectorAll('ul li');
-navLinks.forEach(link => {
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add('current');
-    }
-});
