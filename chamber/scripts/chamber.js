@@ -149,9 +149,9 @@ function displayForecast(data) {
 }
 
 const currentPage = window.location.pathname;
-const navLinks = document.querySelectorAll('nav a');
+const navLinks = document.querySelectorAll('nav li');
 navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
-        link.parentElement.classList.add('current');
+        link.classList.add('current');
     }
 });
