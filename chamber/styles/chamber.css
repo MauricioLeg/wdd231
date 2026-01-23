@@ -21,6 +21,7 @@ header {
     grid-template-columns: 34px auto 48px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    padding-bottom: 2px;
 }
 header img {
     width: 34px;
@@ -54,7 +55,7 @@ li a {
     text-decoration: none;
     color: var(--secondary-color);
 }
-#current {
+.current {
     border-bottom: 1px solid #000;
 }
 li:hover {

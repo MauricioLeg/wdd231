@@ -57,13 +57,13 @@
         color: #000;
     }
     /*************** HOME PAGE ***************/
-    div {
+    .main {
         display: grid;
         grid-template-columns: 50% 50%;
         margin: 0 5rem;
     }
-    div h1, 
-    div picture,
+    .main h1, 
+    .main picture,
     #events,
     .spotlight {
         grid-column: 1/ 3;
@@ -79,12 +79,12 @@
     }
 }
 @media only screen and (min-width: 50rem) {
-    div {
+    .main {
         grid-template-columns: 50% 25% 25%;
         margin: 0 8rem;
     }
-    div h1, 
-    div picture,
+    .main h1, 
+    .main picture,
     .spotlight {
         grid-column: 1 / 4;
     }
