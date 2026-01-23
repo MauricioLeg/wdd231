@@ -65,6 +65,7 @@ li:hover {
     border: none;
     color: #3D405B;
     cursor: pointer;
+    margin-right: 1.5rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .hamburger::before {
@@ -73,56 +74,6 @@ li:hover {
 }
 .hamburger.show::before {
     content: "\00D7";
-}
-
-/*************** DIRECTORY ***************/
-h2 {
-    text-align: center;
-}
-.display {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.card-box {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 5px;
-    box-shadow: 8px 8px 8px #333;
-    border: 1px solid var(--primary-color);
-}
-.card-box img {
-    display: flex;
-    justify-self: center;
-    margin: 1rem 0;
-}
-.cards.list .card-box {
-    margin: 0 1rem;
-    padding: .5rem;
-    box-shadow: none;
-}
-.cards.list .card-box h3 {
-    padding: .5rem;
-}
-.cards.list .card-box:nth-child(even) {
-    background-color: #fff;
-    color: #000;
-}
-.cards.list .card-box:nth-child(odd) {
-    background-color: blanchedalmond;
-    color: #000;
-}
-.cards.list .card-box img {
-    display: none;
-}
-img.logo {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1200 / 630;
-    object-fit: contain;
 }
 
 /*************** FOOTER ***************/
@@ -143,4 +94,137 @@ footer {
 .info {
     padding: 1rem;
     text-align: center;
+}
+
+/*************** DIRECTORY ***************/
+h2 {
+    text-align: center;
+}
+.display {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.directory {
+    .card-box {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 8px 8px 8px #333;
+        border: 1px solid var(--primary-color);
+    }
+    .card-box img {
+        display: flex;
+        justify-self: center;
+        margin: 1rem 0;
+    }
+    .cards.list .card-box {
+        margin: 0 1rem;
+        padding: .5rem;
+        box-shadow: none;
+    }
+    .cards.list .card-box h3 {
+        padding: .5rem;
+    }
+    .cards.list .card-box:nth-child(even) {
+        background-color: #fff;
+        color: #000;
+    }
+    .cards.list .card-box:nth-child(odd) {
+        background-color: blanchedalmond;
+        color: #000;
+    }
+    .cards.list .card-box img {
+        display: none;
+    }
+}
+img.logo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: contain;
+}
+
+/*************** HOME PAGE ***************/
+div {
+    margin-right: 1rem;
+}
+#hero {
+    width: 100%;
+    height: auto;
+}
+section {
+    background-color: var(--primary-color);
+    margin: .5rem;
+    font-family: var(--font-family);
+    padding-bottom: 2rem;
+    font-size: larger;
+}
+section h2 {
+    background-color: rgb(196, 196, 181);
+    margin-bottom: 2rem;
+}
+#events p {
+    padding: 3rem 0;
+}
+#current-weather {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+#current-weather h2 {
+    grid-column: 1 / 3;
+}
+#current-weather img {
+    grid-row: 2 / 8;
+}
+#current-weather p {
+    grid-column: 2;
+    margin: 5px 0;
+}
+
+#fore-weather {
+    min-height: 10rem;
+}
+#fore-weather p {
+    margin: 2rem;
+}
+.home-page .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #fff;
+}
+.home-page section .card-box {
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.home-page .card-box h3 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    margin: 1rem 0;
+    text-align: center;
+}
+.home-page .card-box h4 {
+    grid-column: 1 / 3;
+    grid-row: 2;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #000;
+}
+.home-page .cards img {
+    grid-column: 1;
+    grid-row: 3 / 6;
+    width: 80%;
+}
+.home-page .cards p {
+    grid-column: 2 ;
+    font-size: medium;
 }
