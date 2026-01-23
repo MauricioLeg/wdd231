@@ -149,7 +149,7 @@ function displayForecast(data) {
 }
 
 const currentPage = window.location.pathname;
-const navLinks = document.querySelector('nav a');
+const navLinks = document.querySelectorAll('nav a');
 navLinks.forEach(link => {
     if (link.getAttribute("href") === currentPage) {
         link.parentElement.classList.add('current');
