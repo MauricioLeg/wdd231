@@ -20,14 +20,15 @@ async function createCards() {
     .then(data => {
         const isHomePage = document.body.classList.contains('home-page');
         const companiesToShow = isHomePage
-        ? data.filter(c => c.membershipLevel === 2 || c.membershipLevel === 3).slice(0, 3) : data;
+        ? data.filter(c => c.membershipLevel === 2 || c.membershipLevel === 3).slice(0, 5) : data;
         console.log(companiesToShow);
+        const randomFiltered = companiesToShow.sort(() => Math.random() - 0.5).slice(0, 2 );
         const isDirectory = document.body.classList.contains('directory');
         const companiesDirectory = isDirectory 
         ? data : data;
         console.log(companiesDirectory);
         if (document.body.classList.contains('home-page')) {
-            companiesToShow.forEach(company => {
+            randomFiltered.forEach(company => {
                 const card = document.createElement("aside");
                 card.classList.add('card-box');
                 let imgTag = `<img src="${company.logo}" width="150" height="auto" loading="lazy" alt="Site's logo">`;

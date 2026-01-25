@@ -161,7 +161,6 @@ h3:hover {
     gap: 1rem;
     padding: 1rem;
 }
-
 #cards-container section {
     background-color: var(--primary-color);
     border: 1px solid #ddd;
@@ -171,11 +170,33 @@ h3:hover {
     display: flex;
     gap: 2px;
 }
-
 #cards-container section.completed {
     background-color: lightgreen;
 }
 .credits {
     grid-column: 1 / 4;
     text-align: center;
+}
+#course-details {
+    margin: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 0 3rem #000;
+    width: 90%;
+    max-width: 600px;
+
+}
+#course-details p {
+    margin: 1rem;
+}
+#course-details button {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border-radius: 8px;
+}
+::backdrop {
+    background-color: rgba(0, 0, 0, 50%);
 }

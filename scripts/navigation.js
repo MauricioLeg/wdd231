@@ -121,8 +121,14 @@ createCoursesCards(courses, "all");
 
 function createCoursesCards(filteredCourses) {
     const cardsContainer = document.querySelector('#cards-container');
+    const courseDetails = document.querySelector("#course-details");
     cardsContainer.innerHTML = '';
     
+    courseDetails.addEventListener('click', (event) => {
+        if (event.target === courseDetails) {
+            courseDetails.close();
+        }
+    });
     let totalCredits = 0;
     let credits = document.createElement("p");
     filteredCourses.forEach(course => {
@@ -141,16 +147,28 @@ function createCoursesCards(filteredCourses) {
             completed.textContent = "";
         }
         totalCredits += course.credits;
+        card.addEventListener('click', () => {
+            courseDetails.innerHTML = `<h2>${course.subject} ${course.number}</h2>
+            <button class="closeBtn" aria-label="Close">✖</button>
+            <h3>${course.title}</h3>
+            <p>Credits: ${course.credits}</p>
+            <p>Certificate: ${course.certificate}</p>
+            <p>${course.description}</p>
+            <p>Technology: ${course.technology}</p>`;
+        courseDetails.querySelector(".closeBtn").addEventListener('click', () => {
+        courseDetails.close();
+        });
+
+            courseDetails.showModal();
+        });
         
         card.appendChild(completed);
         card.appendChild(subject);
         card.appendChild(number);
-
+        
         cardsContainer.appendChild(card);
     });
-    credits.textContent = `The total credits for course listed above is ${totalCredits}`;
+    credits.textContent = `The total credits for the courses listed above is ${totalCredits}`;
     credits.classList.add("credits");
     cardsContainer.appendChild(credits)
 };
-
-// Comment to check json file
