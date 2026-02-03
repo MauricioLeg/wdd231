@@ -24,6 +24,7 @@ async function createCards() {
         console.log(companiesToShow);
         const randomFiltered = companiesToShow.sort(() => Math.random() - 0.5).slice(0, 2 );
         const isDirectory = document.body.classList.contains('directory');
+        if (!isHomePage || !isDirectory) return;
         const companiesDirectory = isDirectory 
         ? data : data;
         console.log(companiesDirectory);
@@ -100,6 +101,7 @@ const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lo
 const foreUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
 
 async function apiFetch() {
+    if (!currentWeather) return;
     try {
         const response = await fetch(url);
         const response2 = await fetch(foreUrl);
@@ -147,4 +149,115 @@ function displayForecast(data) {
                             <p>Today: ${data.list[1].main.temp}&deg;C</p>
                             <p>${tomorrow}: ${data.list[10].main.temp}&deg;C</p>
                             <p>${afterTomorrow}: ${data.list[18].main.temp}&deg;C</p>`;
+}
+
+// JOIN PAGE FUNCTIONALITY
+document.querySelector('#timestamp').value = Date.now();
+
+const membership = document.querySelector('#memberships');
+const dialog = document.querySelector('#levels')
+const membershipLevel = [
+    {
+        "title": "Non-Profit membership",
+        "price": "free",
+        "benefits": [
+            "Business listing in online directory", 
+            "Non-profit badge on profile", 
+            "Access to general networking events",
+            "Invitations to community forums",
+            "Limited event discounts (5-10%)",
+            "Newsletter inclusion (text only)"
+        ]
+    },
+    {
+        "title": "Bronze membership",
+        "price": "$20-$30/month\n$200-$300/year",
+        "benefits": [
+            "Enhanced directory listing (logo + description)",
+            "Access to monthly networking events",
+            "10–15% discount on paid events",
+            "Access to basic training workshops",
+            "Quarterly spotlight in newsletter",
+            "Member-only resources (templates, guides)}"
+        ]
+    },
+    {
+        "title": "Silver membership",
+        "price": "$50-$70/month\n$500-$700/year",
+        "benefits": [
+            "Everything in Bronze, plus",
+            "Homepage spotlight rotation (monthly)",
+            "Social media mentions (2-4 per year)",
+            "Priority registration for events",
+            "25% discount on events & training",
+            "Free attendance to selected workshop",
+            "Job postings on the website",
+            "Access to exclusive roundtables",
+            "Analytics on profile views",
+        ]
+    },
+    {
+        "title": "Gold membership",
+        "price": "$100-$150/month\n$1000-1500/year",
+        "benefits": [
+            "Everything in Silver, plus",
+            "Monthly spotlight article or interview",
+            "Logo placement on event materials",
+            "Speaking opportunities at events",
+            "Host or co-host chamber events",
+            "50-100% discount on events",
+            "VIP-only networking events",
+            "Dedicated account manager",
+            "Early access to sponsorship opportunities",
+        ]
+    }
+]
+const myTitle = document.createElement('h3');
+const mySubtitle = document.createElement('h3');
+const closeBtn = document.createElement('button');
+const price = document.createElement('p');
+const info = document.createElement('p');
+closeBtn.textContent = '✖';
+closeBtn.addEventListener('click', () => dialog.close())
+dialog.appendChild(myTitle);
+dialog.appendChild(price);
+dialog.appendChild(mySubtitle);
+dialog.appendChild(info);
+dialog.appendChild(closeBtn);
+
+function DisplayMemberships(data) {
+    data.forEach(level => {
+        const section = document.createElement('section');
+        const title = document.createElement('p');
+        title.innerText = level.title + " level";
+        const button = document.createElement('button');
+        button.innerHTML = 'Learn more';
+        button.classList.add('learn-btn');
+        button.addEventListener('click', () => DisplayInfo(level));
+        section.appendChild(title);
+        section.appendChild(button);
+        membership.appendChild(section);
+        
+    });
+}
+DisplayMemberships(membershipLevel)
+
+function DisplayInfo(level) {
+    if (!level || !level.benefits) {
+        console.error("Invalid membership data:", level);
+        return;
+    }
+    myTitle.textContent = level.title;
+    price.textContent = `Price: ${level.price}`;
+    mySubtitle.textContent = 'Benefits:';
+    info.innerHTML = "";
+    const ul = document.createElement('ul');
+
+    level.benefits.forEach(benefit => {
+        const list = document.createElement('li');
+        list.textContent = benefit;
+        ul.appendChild(list);
+    })
+    info.appendChild(ul)
+    dialog.showModal();
 }

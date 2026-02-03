@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mauricio Leguizamon">
+    <meta name="description" content="Page to request to join the Chamber of Commerce, the website to promote and improve your business and grow the community">
+    <title>Join our Chamber of Commerce!</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/chamber.css">
+    <link rel="stylesheet" href="styles/chamber-large.css">
+    <link rel="stylesheet" href="styles/chamber-join.css">
+    <link rel="stylesheet" href="styles/chamber-join-large.css">
+    <script src="scripts/chamber.js" defer></script>
+    <link href="../favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <meta property="og:title" content="My Homepage">
+    <meta property="og:description" content="This is the homepage for the course WDD231. Is meant to develop Web development skills">
+    <meta property="og:image" content="https://mauricioleg.github.io/wdd231/chamber/images/meta-image.png">
+    <meta property="og:url" content="https://mauricioleg.github.io/wdd231/">
+</head>
+<body class="home-page">
+    <header>
+        <img src="images/logo.png" alt="Organization's Logo" width="512" height="512">
+        <h1>Tucuman Chamber of Commerce</h1>
+        <button id="ham-btn" class="hamburger" title="Menu bar"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="https://mauricioleg.github.io/wdd231/chamber">Home</a></li>
+                <li><a href="https://mauricioleg.github.io/wdd231/chamber/directory.html">Directory</a></li>
+                <li class="current"><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form method="get" action="thankyou.html" class="form-box">
+            <legend><b>*</b> Indicates Required</legend>
+            <label>First Name <b>*</b><input type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+            <label>Last Name <b>*</b><input type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+            <label>Cell Phone <input type="tel" name="phone"  autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+            <label>Email <b>*</b><input type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
+            <label>Organizational Title <input type="text" name="organization" title="Your organizational title" autocomplete="organization-title" pattern="[A-Za-zÀ-ÿ\- ]{7,}"></label>
+            <label>
+                <legend>Membership Level</legend>
+                <select name="options" id="opt">
+                    <option disabled selected>Select a Product &#9662;</option>
+                    <option value = "option0">NP Membership</option>
+                    <option value = "option1">Bronze Membership</option>
+                    <option value = "option1">Silver Membership</option>
+                    <option value = "option1">Gold Membership</option>
+                </select>
+            </label>
+            <label>Description<textarea name="description" id="description" rows="4"></textarea></label>
+            <input type="hidden" name="timestamp" id="timestamp">
+            <label><input type="submit" id="submit-button" value="Join!"></label>
+        </form>
+        <div id="memberships">
+            <h2>Membership Levels</h2>
+            <dialog id="levels">
+            </dialog>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/MauricioLeg" target="_blank"><img src="images/github.svg" alt="Link to personal GitHub page"></a>
+            <a href="https://www.linkedin.com/in/mauricio-leguizamon-2504292a5/" target="_blank"><img src="images/linkedin.svg" alt="Link to personal LinkedIn page"></a>
+            <a href="https://www.facebook.com/mauricio.leguizamon.731" target="_blank"><img src="images/facebook.svg" alt="Link to personal Facebook page"></a>
+            <a href="https://www.instagram.com/leguizamon2337/" target="_blank"><img src="images/instagram.svg" alt="Link to personal Instagram page"></a>
+        </div>
+        <div class="info">
+            <p>© <span id="currentyear"></span> ※ Mauricio Leguizamon ※ Tucuman, Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
