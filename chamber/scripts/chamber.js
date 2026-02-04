@@ -261,3 +261,17 @@ function DisplayInfo(level) {
     info.appendChild(ul)
     dialog.showModal();
 }
+
+const timestamp = document.querySelector('#timestamp');
+timestamp.addEventListener('DOMContentLoaded', () => {
+    timestamp.value = new Date().toISOString();
+});
+
+// THANK YOU PAGE
+const myInfo = new URLSearchParams(window.location.search);
+
+document.querySelector('#results').innerHTML = `
+<p>Name ${myInfo.get('first')} ${myInfo.get('last')}</p>
+<p>Organization: ${myInfo.get('title')}, ${myInfo.get('organization')}</p>
+<p>Your Phone: ${myInfo.get('phone')}</p>
+<p>Your email is ${myInfo.get('email')}<p>`
