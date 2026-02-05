@@ -237,7 +237,18 @@ function DisplayMemberships(data) {
         section.appendChild(title);
         section.appendChild(button);
         membership.appendChild(section);
-        
+        if (level.title === 'Non-Profit membership') {
+            section.classList.add('non-profit');
+        }
+        if (level.title === 'Bronze membership') {
+            section.classList.add('bronze');
+        }
+        if (level.title === 'Silver membership') {
+            section.classList.add('silver');
+        }
+        if (level.title === 'Gold membership') {
+            section.classList.add('gold');
+        }
     });
 }
 DisplayMemberships(membershipLevel)
@@ -266,12 +277,3 @@ const timestamp = document.querySelector('#timestamp');
 timestamp.addEventListener('DOMContentLoaded', () => {
     timestamp.value = new Date().toISOString();
 });
-
-// THANK YOU PAGE
-const myInfo = new URLSearchParams(window.location.search);
-
-document.querySelector('#results').innerHTML = `
-<p>Name ${myInfo.get('first')} ${myInfo.get('last')}</p>
-<p>Organization: ${myInfo.get('title')}, ${myInfo.get('organization')}</p>
-<p>Your Phone: ${myInfo.get('phone')}</p>
-<p>Your email is ${myInfo.get('email')}<p>`
