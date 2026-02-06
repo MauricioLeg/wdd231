@@ -273,5 +273,8 @@ function DisplayInfo(level) {
     dialog.showModal();
 }
 
-const timestamp = document.querySelector('#timestamp');
-timestamp.value = new Date().toISOString();
+const subBtn = document.querySelector('#submit-button')
+subBtn.addEventListener('click', () => {
+    const timestamp = document.querySelector('#timestamp');
+    timestamp.value = new Date().toISOString();
+});
