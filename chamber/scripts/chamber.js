@@ -274,6 +274,4 @@ function DisplayInfo(level) {
 }
 
 const timestamp = document.querySelector('#timestamp');
-timestamp.addEventListener('DOMContentLoaded', () => {
-    timestamp.value = new Date();
-});
+timestamp.value = new Date().toISOString();
