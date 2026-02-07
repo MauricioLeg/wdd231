@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Mauricio Leguizamon">
-    <meta name="description" content="Home page of the Tucuman Chamber of Commerce, the website to promote and improve your business and grow the community">
-    <title>Tucuman Chamber of Commerce</title>
+    <meta name="description" content="Discover page of the Tucuman Chamber of Commerce, the website to promote and improve your business and grow the community">
+    <title>Discover</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/chamber.css">
     <link rel="stylesheet" href="styles/chamber-large.css">
-    <script src="scripts/chamber.js" defer></script>
+    <link rel="stylesheet" href="styles/discover-small.css">
+    <link rel="stylesheet" href="styles/discover-medium.css">
+    <link rel="stylesheet" href="styles/discover-large.css">
+    <script src="scripts/chamber.js" type="module"></script>
     <link href="../favicon.ico" rel="icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,35 +22,25 @@
     <meta property="og:image" content="https://mauricioleg.github.io/wdd231/chamber/images/meta-image.png">
     <meta property="og:url" content="https://mauricioleg.github.io/wdd231/">
 </head>
-<body class="home-page">
+<body>
     <header>
         <img src="images/logo.png" alt="Organization's Logo" width="512" height="512">
         <h1>Tucuman Chamber of Commerce</h1>
         <button id="ham-btn" class="hamburger" title="Menu bar"></button>
         <nav id="nav-bar" class="navigation">
             <ul>
-                <li class="current"><a href="https://mauricioleg.github.io/wdd231/chamber">Home</a></li>
+                <li><a href="https://mauricioleg.github.io/wdd231/chamber">Home</a></li>
                 <li><a href="https://mauricioleg.github.io/wdd231/chamber/directory.html">Directory</a></li>
                 <li><a href="https://mauricioleg.github.io/wdd231/chamber/join.html">Join</a></li>
-                <li><a href="https://mauricioleg.github.io/wdd231/chamber/discover.html">Discover</a></li>
+                <li class="current"><a href="https://mauricioleg.github.io/wdd231/chamber/discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="main">
-            <picture>
-                <source srcset="images/chamber-commerce-large.webp" media="(min-width: 800px)">
-                <img id="hero" src="images/chamber-commerce.png" alt="A chamber of commerce building" loading="lazy">
-            </picture>
-            <h2>Home</h2>
-            <section id="events">
-                <h2>Events</h2>
-                <p></p>
-            </section>
-            <section id="current-weather"></section>
-            <section id="fore-weather"></section>
-            <section class="cards spotlight"></section>
+        <div id="welcome" class="welcome hidden">
+            <p class="welcome-message"></p>
         </div>
+        <div id="discover-cards"></div>
     </main>
     <footer>
         <div class="container">

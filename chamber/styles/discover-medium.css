@@ -1,0 +1,44 @@
+@media only screen and (min-width: 38rem) {
+    
+    #discover-cards section {
+
+        grid-template-areas: 
+        "image name"
+        "image description"
+        "image address"
+        "button button";
+    }
+    #discover-cards section h2 {
+        background: none;
+        padding-bottom: 0;
+        max-height: fit-content;
+    }
+    #discover-cards section figure {
+        display: grid;
+        grid-row: 1 / 4;
+        position: relative;
+    }
+    #discover-cards section figure img {
+        transition: transform 0.4s ease;
+    }
+    #discover-cards section figure:hover img {
+        transform: scale(1.02);
+    }
+    #discover-cards section p,
+    #discover-cards section address {
+        padding: 0 1rem;
+        max-height: fit-content;
+    }
+    #discover-cards section figure::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        transform: scale(1.02);
+    }
+    #discover-cards section figure:hover::after {
+        opacity: 1;
+    }
+}

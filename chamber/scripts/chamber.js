@@ -152,7 +152,10 @@ function displayForecast(data) {
 }
 
 // JOIN PAGE FUNCTIONALITY
-document.querySelector('#timestamp').value = Date.now();
+const timestamp = document.querySelector('#timestamp');
+if (timestamp) {
+    timestamp.value = Date.now();
+}
 
 const membership = document.querySelector('#memberships');
 const dialog = document.querySelector('#levels')
@@ -212,18 +215,21 @@ const membershipLevel = [
         ]
     }
 ]
-const myTitle = document.createElement('h3');
-const mySubtitle = document.createElement('h3');
-const closeBtn = document.createElement('button');
-const price = document.createElement('p');
-const info = document.createElement('p');
-closeBtn.textContent = '✖';
-closeBtn.addEventListener('click', () => dialog.close())
-dialog.appendChild(myTitle);
-dialog.appendChild(price);
-dialog.appendChild(mySubtitle);
-dialog.appendChild(info);
-dialog.appendChild(closeBtn);
+if (membership && dialog) {
+    const myTitle = document.createElement('h3');
+    const mySubtitle = document.createElement('h3');
+    const closeBtn = document.createElement('button');
+    const price = document.createElement('p');
+    const info = document.createElement('p');
+    closeBtn.textContent = '✖';
+    closeBtn.addEventListener('click', () => dialog.close())
+    dialog.appendChild(myTitle);
+    dialog.appendChild(price);
+    dialog.appendChild(mySubtitle);
+    dialog.appendChild(info);
+    dialog.appendChild(closeBtn);
+    DisplayMemberships(membershipLevel)
+}
 
 function DisplayMemberships(data) {
     data.forEach(level => {
@@ -251,7 +257,6 @@ function DisplayMemberships(data) {
         }
     });
 }
-DisplayMemberships(membershipLevel)
 
 function DisplayInfo(level) {
     if (!level || !level.benefits) {
@@ -274,7 +279,62 @@ function DisplayInfo(level) {
 }
 
 const subBtn = document.querySelector('#submit-button')
-subBtn.addEventListener('click', () => {
-    const timestamp = document.querySelector('#timestamp');
-    timestamp.value = new Date().toISOString();
-});
+if (subBtn) {
+    subBtn.addEventListener('click', () => {
+        const timestamp = document.querySelector('#timestamp');
+        timestamp.value = new Date().toISOString();
+    });
+}
+// DISCOVER PAGE FUNCTIONALITY
+import {items} from '../data/items.mjs';
+console.log(items);
+
+const discoverCards = document.querySelector('#discover-cards');
+
+function DisplayDiscoverCards() {
+    if (discoverCards) {
+        items.forEach(info => {
+            const disCard = document.createElement('section');
+            disCard.innerHTML = `
+            <h2>${info.name}</h2>
+            <figure><img src="images/${info.imageUrl}" alt="Place image" loading="lazy"></figure>
+            <address>${info.address}</address>
+            <p>${info.description}</p>
+            <button>Learn More</button>`;
+            discoverCards.appendChild(disCard);
+        });
+    }}
+DisplayDiscoverCards();
+
+const welcome = document.querySelector('#welcome');
+const lastVisit = 'lastVisit';
+const day = 1000 * 60 * 60 * 24;
+if (welcome) {
+    const message = document.querySelector('.welcome-message');
+    function showWelcome(text) {
+        message.textContent = text;
+
+        welcome.classList.remove('hidden');
+        requestAnimationFrame(() => welcome.classList.add('show'));
+
+        setTimeout(() => welcome.classList.remove('show'), 4000);
+        setTimeout(() => welcome.classList.add('hidden'), 4500);
+    }
+    const now = Date.now();
+    const visit = localStorage.getItem(lastVisit);
+
+    if (!visit) {
+        showWelcome('Welcome! Let us know if you have any questions.');
+    } else {
+        const timeAway = now - Number(visit);
+
+        if (timeAway < day) {
+        showWelcome('Back so soon! Awesome!');
+        } else {
+            const daysAgo = Math.floor(timeAway / day);
+            const text = `You last visited ${visit} day${daysAgo !== 1 ? 's' : ''} ago.`;
+            showWelcome(text);
+        }
+    }
+    localStorage.setItem(lastVisit, now);
+}

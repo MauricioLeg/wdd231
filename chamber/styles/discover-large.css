@@ -1,0 +1,9 @@
+@media screen and (min-width: 64rem) {
+    #discover-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    #discover-cards section {
+        margin: 2rem;
+    }
+}

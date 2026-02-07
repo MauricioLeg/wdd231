@@ -1,0 +1,68 @@
+#discover-cards section {
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    display: grid;
+    grid-template-areas: 
+    "name"
+    "image"
+    "description"
+    "address"
+    "button";
+}
+#discover-cards section h2 {
+    border-radius: 10px 10px 0 0;
+    margin: 0;
+    padding: .5rem 0;
+    grid-area: name;
+}
+#discover-cards section figure {
+    display: flex;
+}
+#discover-cards section img {
+    width: 300px;
+    margin: 0 auto;
+    padding: 1rem 0;
+    grid-area: image;
+}
+#discover-cards section p {
+    padding: 1rem 0 .5rem;
+    grid-area: description;
+}
+#discover-cards section address {
+    grid-area: address;
+    margin: 1rem 0;
+}
+#discover-cards section button {
+    width: 10rem;
+    justify-self: center;
+    grid-area: button;
+}
+
+.welcome {
+    position: fixed;
+    top: 3.5rem;
+    left: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    max-width: 320px;
+    padding: 1rem 1rem;
+    background-color: #382929;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0 0 0 0.25);
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    z-index: 1000;
+}
+.welcome-message {
+    margin: .5rem 0 0;
+    opacity: 0.9;
+}
+.welcome.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hidden {
+    display: none;
+}
