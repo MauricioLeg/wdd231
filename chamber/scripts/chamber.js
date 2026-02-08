@@ -12,8 +12,6 @@ navbutton.addEventListener('click', () => {
     navBar.classList.toggle('show');
 });
 
-const cards = document.querySelector(".cards");
-const box = document.querySelector('.card-box');
 async function createCards() {
     await fetch('data/members.json')
     .then(response => response.json())
@@ -26,7 +24,8 @@ async function createCards() {
         const directory = document.querySelector('.directory')
         const companiesDirectory = directory 
         ? data : data;
-        if (isHomePage) {
+        const cards = document.querySelector(".cards");
+        if (isHomePage && cards) {
             randomFiltered.forEach(company => {
                 const card = document.createElement("aside");
                 card.classList.add('card-box');
