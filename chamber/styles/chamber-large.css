@@ -51,6 +51,9 @@
         grid-column: 1 / 5;
         padding: .5rem;
     }
+    .cards.list .card-box p a {
+        color: #45475c;
+    }
     .cards.list .card-box:nth-child(even) {
         background-color: #fff;
         color: #000;
@@ -116,8 +119,5 @@
     /*********** DIRECTORY PAGE ***********/
     .cards.grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-    .card-box p a {
-        color: #45475c;
     }
 }
