@@ -12,6 +12,7 @@ navbutton.addEventListener('click', () => {
     navBar.classList.toggle('show');
 });
 
+const cards = document.querySelector(".cards");
 async function createCards() {
     await fetch('data/members.json')
     .then(response => response.json())
@@ -24,7 +25,6 @@ async function createCards() {
         const directory = document.querySelector('.directory')
         const companiesDirectory = directory 
         ? data : data;
-        const cards = document.querySelector(".cards");
         if (isHomePage && cards) {
             randomFiltered.forEach(company => {
                 const card = document.createElement("aside");
@@ -70,22 +70,23 @@ async function createCards() {
 
 document.addEventListener('DOMContentLoaded', () => {
     createCards();
-    const display1 = document.querySelector("#display-btn1");
-    if (display1){
+    if (cards) {
+        const display1 = document.querySelector("#display-btn1");
+        if (display1){
 
-        display1.addEventListener('click', () => {
-            cards.classList.add('grid');
-            cards.classList.remove('list');
-        });
-    }
+            display1.addEventListener('click', () => {
+                cards.classList.add('grid');
+                cards.classList.remove('list');
+            });
+        }
 
-    const display2 = document.querySelector("#display-btn2");
-    if (display2) {
-        display2.addEventListener('click', () => {
-            cards.classList.toggle('list');
-            cards.classList.remove('grid');
-        });
-    }
+        const display2 = document.querySelector("#display-btn2");
+        if (display2) {
+            display2.addEventListener('click', () => {
+                cards.classList.toggle('list');
+                cards.classList.remove('grid');
+            });
+    }}
 });
 
 // HOME PAGE FUNCTIONALITY
