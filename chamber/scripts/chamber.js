@@ -18,17 +18,15 @@ async function createCards() {
     await fetch('data/members.json')
     .then(response => response.json())
     .then(data => {
-        const isHomePage = document.body.classList.contains('home-page');
+        const isHomePage = document.querySelector(".home-page");
         const companiesToShow = isHomePage
         ? data.filter(c => c.membershipLevel === 2 || c.membershipLevel === 3).slice(0, 5) : data;
         console.log(companiesToShow);
         const randomFiltered = companiesToShow.sort(() => Math.random() - 0.5).slice(0, 2 );
-        const isDirectory = document.body.classList.contains('directory');
-        if (!isHomePage || !isDirectory) return;
-        const companiesDirectory = isDirectory 
+        const directory = document.querySelector('.directory')
+        const companiesDirectory = directory 
         ? data : data;
-        console.log(companiesDirectory);
-        if (document.body.classList.contains('home-page')) {
+        if (isHomePage) {
             randomFiltered.forEach(company => {
                 const card = document.createElement("aside");
                 card.classList.add('card-box');
@@ -46,7 +44,8 @@ async function createCards() {
                 cards.appendChild(card);
             })
         }
-        if (document.body.classList.contains('directory')) {
+        
+        if (directory) {
             companiesDirectory.forEach(company => {
                 const card = document.createElement("section");
                 card.classList.add('card-box');
