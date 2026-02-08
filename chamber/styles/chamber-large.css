@@ -24,18 +24,21 @@
     /*************** DIRECTORY ***************/
     .cards.grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
+        grid-template-columns: repeat(2, 50%);
         box-sizing: border-box;
         margin: 0 auto;
+        justify-items: center;
     }
     .card-box {
         margin: .5rem;
         padding: 2rem 1rem;
+        width: 80%;
+    }
+    .card-box p a {
+        color: #b8f4f1;
     }
     .cards {
         margin: 1rem 0;
-        
     }
     .cards.list .card-box {
         margin: 0 1rem;
@@ -109,5 +112,12 @@
     }
     .home-page .card-box p {
         font-size: small;
+    }
+    /*********** DIRECTORY PAGE ***********/
+    .cards.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card-box p a {
+        color: #45475c;
     }
 }

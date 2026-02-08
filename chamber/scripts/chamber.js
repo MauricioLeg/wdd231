@@ -56,7 +56,7 @@ async function createCards() {
                 <h3>Company name: ${company.companyName}</h3>
                 <p>Address: ${company.address}</p>
                 <p>Phone number: ${company.phone}</p>
-                <p>Website: ${company.website}</p>
+                <p>Website: <a href="${company.website}" target="_blank">${company.companyName} Website</a></p>
                 <p>Membership Level: ${company.membershipLevel}</p>`;
             
                 cards.appendChild(card);
