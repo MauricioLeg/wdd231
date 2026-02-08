@@ -44,7 +44,7 @@ async function createCards() {
             })
         }
         
-        if (directory) {
+        if (directory && cards) {
             companiesDirectory.forEach(company => {
                 const card = document.createElement("section");
                 card.classList.add('card-box');
