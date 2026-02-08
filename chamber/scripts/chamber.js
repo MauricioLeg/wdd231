@@ -71,8 +71,9 @@ async function createCards() {
 document.addEventListener('DOMContentLoaded', () => {
     createCards();
     if (cards) {
+        cards.classList.add('grid');
         const display1 = document.querySelector("#display-btn1");
-        if (display1){
+        if (display1) {
 
             display1.addEventListener('click', () => {
                 cards.classList.add('grid');
