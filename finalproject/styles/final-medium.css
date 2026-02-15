@@ -33,18 +33,13 @@
     background:
         linear-gradient(#928aff) padding-box,
         linear-gradient(
-            95deg,
-            red,
-            orange,
-            yellow,
+            95deg, red, orange, yellow,
             green,
             cyan,
             blue,
             purple,
             red,
-            orange,
-            yellow
-        ) border-box;
+            orange, yellow) border-box;
     background-size: 100% 100%, 400% 4px;
     background-position: 0 0, 0 100%;
     background-repeat: no-repeat;
