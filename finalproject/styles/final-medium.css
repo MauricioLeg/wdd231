@@ -31,7 +31,7 @@
     border-bottom: 4px solid transparent;
     border-radius: 0;
     background-image:
-        linear-gradient(var(--secondary-color)),
+        linear-gradient(var(--secondary-color), var(--secondary-color)),
         linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple, red);
     background-origin: padding-box, border-box;
     background-clip: padding-box, border-box;
