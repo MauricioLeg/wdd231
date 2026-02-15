@@ -1,0 +1,388 @@
+:root {
+    --primary-color: #000000;
+    --secondary-color: #928aff;
+    --accent1-color: #110e0e;
+    --accent2-color: #edf2a6;
+    --font-family: "Roboto";
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*************** HEADER **************/
+header {
+    display: grid;
+    grid-template-columns: 34px auto 48px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding-bottom: 2px;
+}
+header img {
+    width: 34px;
+    height: auto;
+}
+header h1 {
+    font-size: medium;
+    margin-left: 5px;
+}
+
+/*************** NAVIGATION ***************/
+.navigation {
+    background-color: var(--secondary-color);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    width: 20rem;
+    height: 100%;
+    
+    opacity: 0;
+    transform: translate(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    will-change: transform;
+}
+.navigation.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+.navigation ul li {
+    text-align: center;
+    padding: 15px 0;
+    margin: 0 .5rem;
+}
+li a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+.current {
+    border-bottom: 4px solid transparent;
+
+    border-radius: 10px;
+    background: 
+        linear-gradient(var(--secondary-color)) padding-box,
+        linear-gradient(
+            90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            cyan,
+            blue,
+            purple,
+            red
+        ) border-box;
+    
+    background-size: 100% 100%, 300% 100%;
+    background-position: 0 0, 0% 50%;
+
+    animation: borderMove 20s linear infinite;
+}
+@keyframes borderMove {
+    to {
+        background-position: 0 0, 200% 50%;
+    }
+}
+
+li:hover {
+    background-color: rgb(204, 204, 171);;
+}
+.hamburger {
+    background: none;
+    border: none;
+    color: #3D405B;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    z-index: 1001;
+}
+.hamburger::before {
+    content: "\2630";
+    font-size: 24px;
+}
+.hamburger.show::before {
+    content: "\00D7";
+    
+}
+
+/*************** FOOTER ***************/
+footer {
+    background-color: var(--secondary-color);
+    padding: 0;
+    position: sticky;
+    margin-top: 1rem;
+    width: 100%;
+}
+.container {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    margin-right: 5px;
+}
+.info {
+    padding: 1rem;
+    text-align: center;
+}
+
+/************* HOME PAGE *************/
+.card-box {
+    text-align: center;
+    position: relative;
+    margin: 1rem .5rem 2rem;
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #555;
+}
+iframe {
+    display: flex;
+    justify-self: start;
+    width: 55%;
+    border-bottom-left-radius: 15px;
+}
+.card-box div {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    font-size: x-small;
+}
+.card-box img {
+    max-width: 300px;
+    margin: 1rem 0;
+}
+.card-box > h2 {
+    margin-bottom: 1rem;
+    font-size: xx-large;
+}
+.card-box > p {
+    margin: 1rem;
+    font-size: x-large;
+}
+.open-dialog {
+    margin-bottom: 1rem;
+    background-color: var(--accent2-color);
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: .5rem;
+}
+dialog {
+    margin: auto;
+    width: 70%;
+    height: 80%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid #eee;
+    border-radius: 5px;
+    position: relative;
+}
+::backdrop {
+    background-color: #413f3f81;
+}
+dialog iframe {
+    width: 95%;
+    margin: auto;
+    margin-top: 2.5rem;
+}
+dialog div {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+dialog div img {
+    grid-column: 1;
+    grid-row: 1 / 4;
+}
+dialog div h2,
+dialog div p {
+    grid-column: 2;
+}
+.closeBtn {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    padding: .1rem .2rem;
+    background-color: var(--secondary-color);
+}
+
+/************* PLACE PAGE *************/
+.place-card {
+    display: none;
+}
+.place-card.active {
+    display: block;
+    position: relative;
+    margin: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    color: var(--accent1-color);
+}
+.place-card h2 {
+    text-align: center;
+    padding: .5rem;
+    background-color: var(--accent2-color);
+    justify-self: center;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.place-card img {
+    width: 70%;
+    height: auto;
+    max-height: 170px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 2rem 0;
+}
+.carousel {
+    position: relative;
+}
+.carousel-btn {
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+    padding: .3rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+.carousel-btn:hover {
+    background-color: var(--background-color2);
+    color: var(--text-color2);
+    transform: scale(1.2);
+}
+#nextBtn {
+    position: fixed;
+    right: .3rem;
+    top: 15rem;
+    margin: auto;
+    z-index: 1;
+}
+#prevBtn {
+    position: fixed;
+    left: .3rem;
+    top: 15rem;
+    margin: auto;
+}
+#btnNext,
+#btnPrev {
+    position: absolute;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    font-size: 1.5rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+#btnNext {
+    right: 1rem;
+    bottom: 10rem;
+}
+#btnPrev {
+    left: 1rem;
+    bottom: 10rem;
+}
+
+/************* CONTACT US PAGE *************/
+main {
+    min-height: 900px;
+}
+.trip-content {
+    display: none;
+}
+.my-trips {
+    margin: 1rem;
+}
+.my-trips h2 {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding-left: 1rem;
+}
+.trip-content.show {
+    display: block;
+}
+.trip-content ul {
+    display: block;
+}
+.trip-content li {
+    color: var(--accent1-color);
+    display: block;
+}
+.form-box {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 2rem 4rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+}
+b {
+    color: #d70000;
+}
+form {
+    margin: 1rem 2%;
+}  
+label {
+    display: block;
+    justify-self: center;
+    font-size: 1rem;
+    color: purple;
+    padding-top: .2rem;
+}  
+input[type=text],
+input[type=tel],
+input[type=date],
+input[type=email],
+textarea {
+    display: block;
+    margin: .4rem 0 1rem 0 ;
+    padding: .3rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+    border-left-width: 5px;
+    border-left-color:#555;
+    font-size: 1rem;
+    color: #3D405B;
+    width: 250px;
+}
+
+input:required {border-left-color: #d70000;}
+input:focus {border-left-color: black; outline:none;}
+input:required:valid{border-left-color: green;}
+
+input[type=submit] {
+    border: none;
+    text-align: center;
+    background-color: #3D405B;
+    color: white;
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 0;
+    font-size: 1.2rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+input:-webkit-autofill{
+    -webkit-text-fill-color: #3D405B;
+}
+/************* THANK YOU PAGE *************/
+#results {
+    background-color: #F4F1DE;
+    padding: 0 1rem;
+    border: 1px solid #E07A5F;
+    border-radius: 6px;
+  }

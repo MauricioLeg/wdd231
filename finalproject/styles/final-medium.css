@@ -1,0 +1,118 @@
+@media only screen and (min-width: 38rem) {
+    /************* NAVIGATION *************/
+    .hamburger {
+        display: none;
+    }
+    header {
+        grid-template-columns: 34px 1fr 1fr;
+    }
+    header h1 {
+        font-size: larger;
+    }
+    .navigation {
+        position: static;
+        transform: none;
+        width: auto;
+        height: auto;
+        display: block;
+        grid-column: 3 / 4;
+        opacity: 1;
+    }
+    .navigation ul {
+        display: flex;
+        list-style: none;
+        margin-top: 1rem;
+    }
+    .navigation ul li {
+        padding: 0 2rem;
+        border-radius: 0;
+    }
+    .current {
+    border-bottom: 4px solid transparent;
+    border-radius: 0;
+    background:
+        linear-gradient(var(--secondary-color)) padding-box,
+        linear-gradient(
+            95deg,
+            red,
+            orange,
+            yellow,
+            green,
+            cyan,
+            blue,
+            purple,
+            red,
+            orange,
+            yellow
+        ) border-box;
+    background-size: 100% 100%, 400% 4px;
+    background-position: 0 0, 0 100%;
+    background-repeat: no-repeat;
+    animation: borderMove 25s linear infinite;
+}
+
+@keyframes borderMove {
+    to {
+        background-position: 0 0, 100% 100%;
+    }
+}
+    /************* HOME PAGE *************/
+    .card-box {
+    text-align: center;
+    position: relative;
+    margin: 1rem .8rem 2rem;
+    background-color: var(--accent2-color);
+    color: var(--accent1-color);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px #555;
+    }
+    iframe {
+        display: flex;
+        justify-self: start;
+        width: 55%;
+        border-bottom-left-radius: 15px;
+    }
+    .card-box div {
+        font-size: medium;
+        position: absolute;
+        bottom: 2rem;
+        right: 1rem;
+        width: 45%;
+    }
+    .card-box div img {
+        margin: 0;
+    }
+    .card-box > img {
+        border-top-left-radius: 15px;
+        float: left;
+        width: 300px;
+        margin: 0 1rem 2rem 0;
+    }
+    .card-box::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .card-box > h2 {
+        margin-bottom: 1rem;
+        font-size: xx-large;
+    }
+    .card-box > p {
+        margin: 1rem 1rem 3rem 1rem;
+        font-size: large;
+    }
+    /************* PLACES PAGE *************/
+    .place-card > p {
+        text-align: center;
+        margin: .5rem 0;
+        font-size: large;
+    }
+    .place-card img {
+        width: 40%;
+    }
+
+    /************* CONTACT US PAGE *************/
+    label {
+        justify-self: unset;
+    }
+}

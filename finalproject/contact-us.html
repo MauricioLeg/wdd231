@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mauricio Leguizamon">
+    <meta name="description" content="Home page of the Tucuman Tourism website, a beautiful place to visit and discover, with fun activities to do, and amazing views.">
+    <title>Welcome to Tucuman! - Home</title>
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/final-small.css">
+    <link rel="stylesheet" href="styles/final-medium.css">
+    <link rel="stylesheet" href="styles/final-large.css">
+    
+    <script src="scripts/final.js" type="module"></script>
+    
+    <link href="../favicon.ico" rel="icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+    <meta property="og:title" content="My Homepage">
+    <meta property="og:description" content="This is the homepage for the course WDD231. Is meant to develop Web development skills">
+    <meta property="og:image" content="https://mauricioleg.github.io/wdd231/chamber/images/meta-image.png">
+    <meta property="og:url" content="https://mauricioleg.github.io/wdd231/">
+</head>
+<body class="home-page">
+    <header>
+        <img src="images/logo.png" alt="Organization's Logo" width="512" height="512">
+        <h1>Discover the Tucuman's Beauty</h1>
+        <button id="ham-btn" class="hamburger" title="Menu bar"></button>
+        <nav id="nav-bar" class="navigation">
+            <ul>
+                <li><a href="https://mauricioleg.github.io/wdd231/finalproject/">Home</a></li>
+                <li><a href="https://mauricioleg.github.io/wdd231/finalproject/places.html">Places</a></li>
+                <li class="current"><a href="https://mauricioleg.github.io/wdd231/finalproject/contact-us.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contact">
+        <div class="my-trips"><h2>Planned Trips</h2></div>
+        <form method="get" action="thanks.html" class="form-box">
+            <h2>Plan your Trip!</h2>
+            <p><b>*</b> Indicates Required</p>
+            <label>First Name <b>*</b><input type="text" name="first" required autocomplete="given-name" title="Your First Name"></label>
+            <label>Last Name <b>*</b><input type="text" name="last" required autocomplete="family-name" title="Your Last Name"></label>
+            <label>Cell Phone <b>*</b><input type="tel" name="phone" required autocomplete="tel" title="A Phone Number with dashes" placeholder="987-555-1234" ></label>
+            <label>Email <b>*</b><input type="email" name="email" required placeholder="john89@gmail.com"  title="Your Email" autocomplete="email"></label>
+            <label>Start Date<input type="date" name="start-date" id="start-date"></label>
+            <label>End Date<input type="date" name="end-date" id="end-date"></label>
+            <label>What are you expectations?<textarea name="description" id="description"></textarea></label>
+            <label><input type="submit" id="submit-button" value="Go!"></label>
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+            <a href="https://github.com/MauricioLeg" target="_blank"><img src="images/github.svg" alt="Link to personal GitHub page"></a>
+            <a href="https://www.linkedin.com/in/mauricio-leguizamon-2504292a5/" target="_blank"><img src="images/linkedin.svg" alt="Link to personal LinkedIn page"></a>
+            <a href="https://www.facebook.com/mauricio.leguizamon.731" target="_blank"><img src="images/facebook.svg" alt="Link to personal Facebook page"></a>
+            <a href="https://www.instagram.com/leguizamon2337/" target="_blank"><img src="images/instagram.svg" alt="Link to personal Instagram page"></a>
+        </div>
+        <div class="info">
+            <p>© <span id="currentyear"></span> ※ Mauricio Leguizamon ※ Tucuman, Argentina</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>
