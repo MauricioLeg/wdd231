@@ -65,9 +65,11 @@ li a {
     border-bottom: 4px solid transparent;
 
     border-radius: 10px;
-    background: 
-        linear-gradient(#928aff) padding-box,
-        linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple, red) border-box;    
+    background-image:
+        linear-gradient(var(--secondary-color)),
+        linear-gradient(90deg, red, orange, yellow, green, cyan, blue, purple, red);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
     background-size: 100% 100%, 300% 100%;
     background-position: 0 0, 0% 50%;
 
