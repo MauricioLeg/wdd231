@@ -172,7 +172,7 @@ dialog {
     color: var(--primary-color);
     border: 1px solid #eee;
     border-radius: 5px;
-    position: relative;
+    position: fixed;
 }
 ::backdrop {
     background-color: #413f3f81;
