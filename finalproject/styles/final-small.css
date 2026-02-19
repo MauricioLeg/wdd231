@@ -122,6 +122,9 @@ footer {
     padding: 1rem;
     text-align: center;
 }
+.info a {
+    color: var(--primary-color);
+}
 
 /************* HOME PAGE *************/
 .card-box {
